@@ -16,11 +16,7 @@ export class CookieBannerComponent implements OnInit {
 
   constructor(private cookieService: CookieService) {}
   ngOnInit(){
-    this.cookieData = this.cookieService.getCookieBannerData()
-    this.cookieService.getCookieBannerData().subscribe(val=>{
-      console.log(val)
-    })
-
+    this.cookieData = this.cookieService.getCookieBannerData();
   }
   showModal(): void {
     this.isModalShown = true;
