@@ -1,0 +1,139 @@
+.Link {
+  font-weight: bold;
+  color: black;
+  text-decoration: underline;
+}
+
+.customize-button {
+  background-color: transparent !important;
+}
+
+.customize-button:hover {
+  border: none !important;
+  border-color: transparent !important;
+}
+
+.go-to-link {
+  color: black;
+  text-decoration: underline;
+}
+
+.modal-title {
+  color: #393939;
+}
+
+p {
+  color: #878787;
+}
+
+.w-30 {
+  width: 7.5vw;
+}
+
+
+.customize-btn-arrow {
+  margin-top: 0.70rem;
+  margin-left: 0.75rem
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+  top: 4px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #dcdcdc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #ffffff;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #d3efdb;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #d3efdb;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+  background-color: #24b04b;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 17px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.headingText {
+  font-weight: 600;
+  color: black;
+}
+
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+
+  border-bottom: 5px solid black;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+
+  border-top: 5px solid black;
+}
+
+.accordian-section {
+  background-color: #f3f3f3;
+  -webkit-box-shadow: inset 0px 15px 14px -1px rgba(204, 204, 204, 0.4);
+  -moz-box-shadow: inset 0px 15px 14px -1px rgba(204, 204, 204, 0.4);
+  box-shadow: inset 0px 15px 14px -1px rgba(204, 204, 204, 0.4);
+}
+
+.accordian-container {
+  margin: 0;
+  border-radius: 5px;
+}

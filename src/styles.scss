@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.card.customClass,
+.card.customClass .card-header,
+.panel.customClass {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.panel-open .customClass .panel-enabled::after {
+  content: '';
+  position: absolute;
+  top: 60px;
+  left: 5%;
+  width: 90%;
+  border-bottom: 1px solid #D2D2D3;
+}
+
+.panel.customClass .panel-body {
+  background-color: #fff;
+}

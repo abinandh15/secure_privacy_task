@@ -1,0 +1,132 @@
+<div
+  *ngIf="isModalShown"
+  [config]="{ show: true }"
+  (onHidden)="onHidden()"
+  bsModal
+  #autoShownModal="bs-modal"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="dialog-auto-name"
+>
+  <div class="modal-dialog modal-lg max-width-modal">
+    <div class="modal-content">
+      <div class="modal-header p-4">
+        <h1
+          id="dialog-auto-name"
+          class="modal-title pull-left font-weight-bold"
+        >
+          Can we store cookies?
+        </h1>
+        <button
+          type="button"
+          class="close pull-right"
+          aria-label="Close"
+          (click)="hideModal()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body p-4">
+        <p>
+          We and our partners use technologies, such as cookies, and process
+          personal data, such as IP addresses and cookie identifiers, to
+          personalize ads and content based on your interests, measure the
+          performance of ads and content, and derive insights about the
+          audiences who saw ads and content.
+        </p>
+        <p>
+          Click below to consent to the use of this technology and the
+          processing of your personal data for these purposes. You can change
+          your mind and change your consent choices at any time by returning to
+          this site.
+        </p>
+        <p>
+          You can familiarize with our
+          <a href="" class="Link">Privacy Policy</a>
+        </p>
+        <div class="row mt-5 mb-2">
+          <div class="col-md-8">
+            <button type="button" class="btn btn-success text-white">
+              Accept All
+            </button>
+
+            <button type="button" class="btn btn-outline-secondary ml-3">
+              Save Settings
+            </button>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <button
+              type="button"
+              class="btn btn-light float-right pull-right text-secondary customize-button"
+            >
+              Customize
+              <span class="arrow-up float-right customize-btn-arrow"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Accordian Section -->
+      <section class="accordian-section p-4">
+        <accordion
+          *ngFor="let data of (cookieData | async)?.accordian; let i = index"
+          class="accordian-container"
+        >
+          <accordion-group
+            class="mt-4"
+            [panelClass]="'customClass'"
+            [isOpen]="i == 0 ? true : false"
+            (isOpenChange)="data.isOpen = $event"
+          >
+            <button
+              class="btn btn-link btn-block clearfix"
+              accordion-heading
+              type="button"
+            >
+              <label class="switch float-left pull-left">
+                <input type="checkbox" [checked]="data.IsMandatory" />
+                <span class="slider round"></span>
+              </label>
+              <span class="float-left pull-left ml-3 headingText">{{
+                data.CategoyHeading
+              }}</span>
+              <span
+                class="float-right pull-right mt-2"
+                [ngClass]="{
+                  'arrow-down': data.isOpen == true,
+                  'arrow-up': data.isOpen == undefined || data.isOpen == false
+                }"
+              ></span>
+            </button>
+            <p class="pr-3 pl-3">{{ data.CategoyText }}</p>
+            <div class="row mt-5 pr-3 pl-3">
+              <div class="col-md-4 headingText">Plugins</div>
+              <div class="col-md-4 headingText">Block/Enable</div>
+              <div class="col-md-4"></div>
+            </div>
+
+            <div
+              class="row mt-2 pr-3 pl-3"
+              *ngFor="let plugin of data.PluginList"
+            >
+              <div class="col-md-4">
+                <p>{{ plugin.ComplianceType }}</p>
+              </div>
+              <div class="col-md-4">
+                <label class="switch float-left pull-left">
+                  <input type="checkbox" [checked]="plugin.BlockingEnabled" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+              <div class="col-md-4">
+                <a href="" class="go-to-link">Go to site</a>
+              </div>
+            </div>
+          </accordion-group>
+        </accordion>
+      </section>
+    </div>
+  </div>
+</div>
